@@ -2,27 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Merry Christmas </title>
+  <title>Merry Christmas Tree!</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <svg class="mainSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 600">
   <defs>
-    <rect id="noteBackground" x="100" y="50" width="600" height="100" fill="#FFFAE3" stroke="#FFD700" stroke-width="2" rx="10" ry="10"></rect>
-    <text id="noteText" x="110" y="90" font-family="mountains_of_christmasregular" font-size="16" fill="#444444">
-      Hepinizi çok seviyorum, hepiniz benim için çok değerlisiniz. 2024'ün bana kazandırdığı en güzel şey sizlersiniz.
-      Yeni yılın hepinize sağlık, mutluluk, en çok da para (sana en çok sarışın kızları) getirmesi dileğiyle, mutlu yıllar canlarım
-    </text>
+    <radialGradient id="dotGrad" cx="0" cy="0" r="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="0.1" style="stop-color:#0867C7;stop-opacity:0.6" />
+      <stop offset="1" style="stop-color:#081029;stop-opacity:0" />
+    </radialGradient>
   </defs>
   <g class="whole">
-    <g class="pContainer"></g>
-    
+    <!-- Not Kağıdı -->
+    <g id="note" transform="translate(200, 50)">
+      <rect width="400" height="100" fill="#FFFAE3" stroke="#FFD700" stroke-width="2" rx="10" ry="10"></rect>
+      <text x="20" y="30" font-family="mountains_of_christmasregular" font-size="14" fill="#444444">
+        Hepinizi çok seviyorum, hepiniz benim için çok değerlisiniz.
+      </text>
+      <text x="20" y="50" font-family="mountains_of_christmasregular" font-size="14" fill="#444444">
+        2024'ün bana kazandırdığı en güzel şey sizlersiniz.
+      </text>
+      <text x="20" y="70" font-family="mountains_of_christmasregular" font-size="14" fill="#444444">
+        Yeni yılın hepinize sağlık, mutluluk, en çok da para (sana en çok sarışın kızları
+      </text>
+      <text x="20" y="90" font-family="mountains_of_christmasregular" font-size="14" fill="#444444">
+        getirsin kardeşim) getirmesi dileğiyle, mutlu yıllar canlarım!
+      </text>
+    </g>
+
+    <!-- Ana SVG Ağaç ve Diğer Elemanlar -->
+    <circle class="sparkle" fill="url(#dotGrad)" cx="400" cy="300" r="50"></circle>
+    <!-- Daha fazla ağaç animasyonu burada devam eder -->
   </g>
-  <foreignObject id="endMessage" x="0" y="550" width="800" height="250">
-    <span class="endMessage">
-      Merry Christmas!!!!!!
-    </span>
-  </foreignObject>
 </svg>
 <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 <script src="./script.js"></script>
